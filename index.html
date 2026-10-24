@@ -1,116 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Abhishek Yadav - Frontend Developer Portfolio">
-<title>Abhishek Yadav | Frontend Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Abhishek Yadav — Frontend Developer Portfolio" />
+  <title>Abhishek Yadav | Frontend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="glow"></div>
 
-<header>
-<nav class="nav">
-<a class="logo" href="#home">&lt;AY/&gt;</a>
-<button id="menuBtn" aria-label="Menu">☰</button>
-<div id="navMenu" class="nav-links">
-<a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
-<a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
-</div>
-<a class="resume" href="assets/resume.pdf" download>Resume ↓</a>
-</nav>
-</header>
+  <!-- ════════════════════════════════════
+       LOADING SCREEN
+  ════════════════════════════════════ -->
+  <div id="loader" role="status" aria-label="Loading portfolio">
+    <div class="ld-inner">
+      <div class="ld-logo">&lt;AY/&gt;</div>
+      <div class="ld-bar-track"><div class="ld-bar" id="ldBar"></div></div>
+      <div class="ld-label">Initializing<span class="ld-dots"><span>.</span><span>.</span><span>.</span></span></div>
+      <div class="ld-pct" id="ldPct">0%</div>
+    </div>
+  </div>
 
-<main>
-<section id="home" class="hero section">
-<div>
-<span class="badge">● Available for opportunities</span>
-<p class="hello">Hello, I'm</p>
-<h1>Abhishek<br><span>Yadav</span></h1>
-<h2><span id="typing"></span><b>|</b></h2>
-<p class="intro">Computer Science Engineering student passionate about frontend development, UI/UX design and building responsive digital experiences.</p>
-<div class="buttons"><a class="btn primary" href="#projects">View My Work →</a><a class="btn" href="#contact">Let's Connect</a></div>
-<div class="social">
-<a href="https://github.com/abhishekyadav-pun" target="_blank">GitHub</a>
-<a href="https://linkedin.com/in/abhishek-yadav-pun-5b4087400" target="_blank">LinkedIn</a>
-<a href="mailto:abhishekydv.tech65@gmail.com">Email</a>
-</div>
-</div>
-<div class="code-card">
-<div class="dots">● ● ●</div>
-<pre><code><span class="p">const</span> developer = {
-  name: <span class="g">"Abhishek Yadav"</span>,
-  role: <span class="g">"Frontend Developer"</span>,
-  skills: [<span class="g">"HTML"</span>, <span class="g">"CSS"</span>,
-           <span class="g">"JavaScript"</span>, <span class="g">"C++"</span>,
-           <span class="g">"Java"</span>],
-  passion: <span class="g">"Building cool things"</span>
-};</code></pre>
-</div>
-</section>
+  <!-- cursor glow -->
+  <div class="glow" aria-hidden="true"></div>
 
-<section id="about" class="section">
-<div class="heading"><small>01 / ABOUT</small><h2>About <span>Me</span></h2></div>
-<div class="two-col">
-<div>
-<p class="big">Passionate <span>Computer Science Engineering student</span> focused on frontend development and UI/UX.</p>
-<p>I enjoy creating responsive and interactive web interfaces that combine clean design with a great user experience.</p>
-<p>Alongside frontend development, I work with C, C++ and Java while continuously improving my problem-solving skills.</p>
-<a class="btn primary" href="assets/resume.pdf" download>Download Resume</a>
-</div>
-<div class="stats">
-<div><strong>B.Tech</strong><small>Computer Science</small></div>
-<div><strong>Frontend</strong><small>Development</small></div>
-<div><strong>UI/UX</strong><small>Design</small></div>
-<div><strong>Finalist</strong><small>Hackathons</small></div>
-</div>
-</div>
-</section>
+  <!-- ════════════════════════════════════
+       HEADER
+  ════════════════════════════════════ -->
+  <header>
+    <nav class="nav">
+      <a class="logo" href="#home">&lt;AY/&gt;</a>
+      <button id="menuBtn" aria-label="Toggle menu">☰</button>
+      <div id="navMenu" class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="resume" href="assets/resume.pdf" download>Resume ↓</a>
+    </nav>
+  </header>
 
-<section id="skills" class="section">
-<div class="heading"><small>02 / SKILLS</small><h2>My <span>Skills</span></h2></div>
-<div class="cards skills">
-<article><h3>Frontend Development</h3><p>HTML5</p><div class="bar"><i style="width:95%"></i></div><p>CSS3</p><div class="bar"><i style="width:90%"></i></div><p>JavaScript</p><div class="bar"><i style="width:85%"></i></div></article>
-<article><h3>Programming</h3><div class="tags"><span>C</span><span>C++</span><span>Java</span><span>Problem Solving</span></div></article>
-<article><h3>Design & Soft Skills</h3><div class="tags"><span>UI/UX</span><span>Responsive Design</span><span>Team Collaboration</span><span>Creative Thinking</span><span>Hackathons</span></div></article>
-</div>
-</section>
+  <!-- ════════════════════════════════════
+       MAIN
+  ════════════════════════════════════ -->
+  <main>
 
-<section id="projects" class="section">
-<div class="heading"><small>03 / SELECTED WORK</small><h2>Featured <span>Projects</span></h2></div>
-<div class="cards projects">
-<article><small>01 / WEB APPLICATION</small><h3>Care Queue Management System</h3><p>Project focused on managing queues and improving service workflow through a user-friendly interface.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></article>
-<article><small>02 / WEB APPLICATION</small><h3>Travel Planner</h3><p>Travel planning project designed to help users organize and manage their travel plans through a responsive interface.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></article>
-<article><small>03 / COMING SOON</small><h3>More Projects</h3><p>Currently building new projects and experiments.</p><div class="tags"><span>BUILDING</span><span>LEARNING</span></div></article>
-</div>
-</section>
+    <!-- ── HERO ── -->
+    <section id="home" class="hero section">
 
-<section id="experience" class="section">
-<div class="heading"><small>04 / MY JOURNEY</small><h2>Experience & <span>Achievements</span></h2></div>
-<div class="timeline">
-<article><b>2025 — PRESENT</b><div><small>EDUCATION</small><h3>B.Tech — Computer Science Engineering</h3><h4>Physics Wallah Institute of Innovation</h4><p>Pursuing a Bachelor's degree while developing practical programming and frontend skills.</p></div></article>
-<article><b>EXPERIENCE</b><div><small>FRONTEND DEVELOPMENT</small><h3>Frontend Developer</h3><h4>Projects & Practice</h4><p>Developed responsive and interactive web pages using HTML, CSS and JavaScript.</p></div></article>
-<article><b>ACHIEVEMENT</b><div><small>HACKATHONS</small><h3>Hackathon Finalist</h3><h4>Team-based Innovation</h4><p>Participated in hackathons and contributed to frontend design, prototypes and real-world problem solving.</p></div></article>
-</div>
-</section>
+      <!-- Left: text -->
+      <div class="hero-text">
+        <span class="badge">● Available for opportunities</span>
+        <p class="hello">Hello, I'm</p>
+        <h1>Abhishek<br /><span>Yadav</span></h1>
+        <h2><span id="typing"></span><b aria-hidden="true">|</b></h2>
+        <p class="intro">CSE student &amp; Frontend Developer with internship experience building responsive, accessible web interfaces. Hackathon finalist with a strong UI/UX foundation.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#projects">View My Work →</a>
+          <a class="btn" href="#contact">Let's Connect</a>
+        </div>
+        <div class="social">
+          <a href="https://github.com/abhishekyadav-pun" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/abhishek-yadav-pun-5b4087400" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:abhishekydv.tech65@gmail.com">Email</a>
+        </div>
+      </div>
 
-<section id="contact" class="section contact">
-<div class="contact-box">
-<div><small>HAVE A PROJECT IN MIND?</small><h2>Let's build something <span>great together.</span></h2><p>I'm interested in learning, collaborating and working on exciting development projects.</p><a class="btn primary" href="mailto:abhishekydv.tech65@gmail.com">Get In Touch →</a></div>
-<div class="contact-links">
-<a href="mailto:abhishekydv.tech65@gmail.com">✉ abhishekydv.tech65@gmail.com</a>
-<a href="tel:+918957533965">☎ +91 8957533965</a>
-<a href="https://github.com/abhishekyadav-pun" target="_blank">⌘ github.com/abhishekyadav-pun</a>
-</div>
-</div>
-</section>
-</main>
+      <!-- Right: profile photo -->
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-glow" aria-hidden="true"></div>
+        <div class="hero-photo-ring"  aria-hidden="true"></div>
+        <div class="hero-photo-container">
+          <img src="assets/profile.jpg" alt="Abhishek Yadav" class="hero-photo" />
+        </div>
+        <div class="hero-badge top-badge"><span>🎓</span> CSE Student</div>
+        <div class="hero-badge bot-badge"><span>💻</span> Frontend Dev</div>
+      </div>
 
-<footer>© <span id="year"></span> Abhishek Yadav · Designed & Built with code.</footer>
-<script src="script.js"></script>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section id="about" class="section">
+      <div class="heading"><small>01 / ABOUT</small><h2>About <span>Me</span></h2></div>
+      <div class="two-col">
+        <div>
+          <p class="big">Frontend Developer &amp; <span>CSE student</span> with real internship experience and a strong UI/UX foundation.</p>
+          <p>I build responsive, accessible web interfaces using HTML, CSS, and JavaScript. I've worked remotely as a Frontend Intern at KP Smart IT Solutions, delivered production-ready UI layouts, and co-built projects from scratch.</p>
+          <p>Also proficient in C++, Java, React.js, Next.js, SQL — always looking for the next thing to build.</p>
+          <a class="btn primary" href="assets/resume.pdf" download>Download Resume</a>
+        </div>
+        <div class="stats">
+          <div><strong>Intern</strong><small>KP Smart IT Solutions</small></div>
+          <div><strong>B.Tech</strong><small>CSE · 2025–2029</small></div>
+          <div><strong>UI/UX</strong><small>Design</small></div>
+          <div><strong>Finalist</strong><small>Hackathons</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ── -->
+    <section id="skills" class="section">
+      <div class="heading"><small>02 / SKILLS</small><h2>My <span>Skills</span></h2></div>
+      <div class="skills-grid">
+
+        <!-- row 1 -->
+        <article class="skill-card">
+          <h3>Frontend Development</h3>
+          <p>HTML5</p><div class="bar"><i style="width:95%"></i></div>
+          <p>CSS3</p><div class="bar"><i style="width:90%"></i></div>
+          <p>JavaScript</p><div class="bar"><i style="width:85%"></i></div>
+          <p>React.js / Next.js</p><div class="bar"><i style="width:70%"></i></div>
+        </article>
+
+        <article class="skill-card">
+          <h3>Design &amp; UI/UX</h3>
+          <div class="tags">
+            <span>Figma</span><span>Canva</span><span>Photoshop</span><span>Illustrator</span>
+            <span>Wireframing</span><span>Prototyping</span><span>Visual Hierarchy</span>
+            <span>Color Theory</span><span>Typography</span><span>Brand Identity</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <h3>Programming &amp; DB</h3>
+          <div class="tags">
+            <span>C</span><span>C++</span><span>Java</span>
+            <span>SQL</span><span>MySQL</span><span>Problem Solving</span>
+          </div>
+        </article>
+
+        <!-- row 2 -->
+        <article class="skill-card">
+          <h3>Content Writing</h3>
+          <div class="tags">
+            <span>Copywriting</span><span>LinkedIn Posts</span><span>Script Writing</span>
+            <span>Storytelling</span><span>Hooks &amp; CTAs</span><span>Caption Writing</span>
+            <span>Proofreading</span><span>Health Awareness Content</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <h3>Social Media &amp; Content</h3>
+          <div class="tags">
+            <span>Instagram</span><span>LinkedIn</span><span>Content Calendar</span>
+            <span>Content Scheduling</span><span>Audience Engagement</span>
+            <span>Reels</span><span>Short-Form Video</span><span>Carousel Design</span>
+            <span>Campaign Ideation</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <h3>Tools &amp; Analytics</h3>
+          <div class="tags">
+            <span>CapCut</span><span>InShot</span><span>Instagram Insights</span>
+            <span>LinkedIn Analytics</span><span>Reach &amp; Impressions Tracking</span>
+            <span>Engagement Analysis</span><span>Content Optimization</span>
+          </div>
+        </article>
+
+        <!-- row 3 — full width -->
+        <article class="skill-card skill-wide">
+          <h3>Professional Skills</h3>
+          <div class="tags">
+            <span>Written Communication</span><span>Creativity</span><span>Research</span>
+            <span>Time Management</span><span>Team Collaboration</span><span>Adaptability</span>
+            <span>Attention to Detail</span><span>Feedback Implementation</span>
+            <span>English — Fluent</span><span>Hindi — Fluent</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section id="projects" class="section">
+      <div class="heading"><small>03 / SELECTED WORK</small><h2>Featured <span>Projects</span></h2></div>
+      <div class="cards projects">
+        <article>
+          <small>01 / WEB APPLICATION</small>
+          <h3>Care Queue Management System</h3>
+          <p>Digital queue management interface with real-time status tracking and accessible UI for smooth patient and user flow.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI/UX</span></div>
+        </article>
+        <article>
+          <small>02 / WEB APPLICATION</small>
+          <h3>Travel Planner</h3>
+          <p>Interactive travel planning app with dynamic itinerary management, map-friendly UI components and fully responsive design.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
+        </article>
+        <article>
+          <small>03 / COMING SOON</small>
+          <h3>More Projects</h3>
+          <p>Currently building new projects exploring React.js, Next.js and full-stack experiments.</p>
+          <div class="tags"><span>React</span><span>Next.js</span><span>Building</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── EXPERIENCE ── -->
+    <section id="experience" class="section">
+      <div class="heading"><small>04 / MY JOURNEY</small><h2>Experience &amp; <span>Achievements</span></h2></div>
+      <div class="timeline">
+
+        <article>
+          <b>MAY – JUN 2026</b>
+          <div>
+            <small>INTERNSHIP</small>
+            <h3>Web Developer Intern — Frontend</h3>
+            <h4>KP Smart IT Solutions Pvt. Ltd. · Remote</h4>
+            <p>Built responsive, interactive web pages using HTML, CSS and JavaScript. Designed UI/UX layouts focused on usability and accessibility. Earned an official Internship Certificate.</p>
+          </div>
+        </article>
+
+        <article>
+          <b>2025 – 2029</b>
+          <div>
+            <small>EDUCATION</small>
+            <h3>B.Tech — Computer Science Engineering</h3>
+            <h4>Physics Wallah Institute of Innovation, Pune &amp; Medhavi Skills University, Sikkim</h4>
+            <p>Pursuing a dual B.Tech while building practical frontend, design and programming skills alongside academic coursework.</p>
+          </div>
+        </article>
+
+        <article>
+          <b>ACHIEVEMENT</b>
+          <div>
+            <small>HACKATHONS &amp; EVENTS</small>
+            <h3>Hackathon Finalist</h3>
+            <h4>Team-based Innovation</h4>
+            <p>Secured a top finalist position in a competitive hackathon. Contributed frontend design and prototyping under pressure — recognised across multiple coding and innovation events.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact" class="section contact">
+      <div class="contact-box">
+        <div>
+          <small>HAVE A PROJECT IN MIND?</small>
+          <h2>Let's build something <span>great together.</span></h2>
+          <p>I'm open to frontend roles, internships, collaborations and exciting development projects.</p>
+          <a class="btn primary" href="mailto:abhishekydv.tech65@gmail.com">Get In Touch →</a>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:abhishekydv.tech65@gmail.com">✉ abhishekydv.tech65@gmail.com</a>
+          <a href="tel:+918957533965">☎ +91 8957533965</a>
+          <a href="https://github.com/abhishekyadav-pun" target="_blank" rel="noopener">⌘ github.com/abhishekyadav-pun</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>© <span id="year"></span> Abhishek Yadav · Designed &amp; Built with code.</footer>
+  <script src="script.js"></script>
 </body>
 </html>
